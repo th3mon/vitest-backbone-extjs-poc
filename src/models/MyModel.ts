@@ -1,9 +1,9 @@
-import Backbone from 'backbone';
+import Backbone from "backbone";
 
 class MyModel extends Backbone.Model {
   defaults() {
     return {
-      // Define default attributes here
+      attributeName: "defaultValue", // Define default values here
     };
   }
 }
