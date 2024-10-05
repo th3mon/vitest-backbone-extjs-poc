@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "vite",
     "test": "vitest",
-    "build": "npm run copy-requirejs && tsc",
-    "copy-requirejs": "mkdir -p ./dist/lib && cp node_modules/requirejs/require.js ./dist/lib/require.js"
+    "build": "npm run remove-dist && npm run copy-requirejs && tsc",
+    "copy-requirejs": "mkdir -p ./dist/lib && cp node_modules/requirejs/require.js ./dist/lib/require.js",
+    "remove-dist": "rm -rf dist",
+    "serve": "npx http-server --port 8080 --cors",
+    "watch": "npm run copy-requirejs && chokidar 'src/**/*' -c 'tsc'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "backbone": "^1.6.0",
+    "jquery": "^3.7.1",
     "requirejs": "^2.3.7"
   },
   "devDependencies": {
@@ -23,9 +26,10 @@
     "@types/requirejs": "^2.1.37",
     "@types/underscore": "^1.11.15",
     "@vitejs/plugin-vue": "^5.1.4",
+    "chokidar": "^4.0.1",
+    "chokidar-cli": "^3.0.0",
     "jsdom": "^25.0.1",
     "typescript": "^5.6.2",
-    "vite": "^5.4.8",
     "vitest": "^2.1.2"
   }
 }
