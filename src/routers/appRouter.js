@@ -1,11 +1,9 @@
-import { BackboneModule } from "../types/backbone-module";
-
 define(["backbone", "collections/itemList", "views/itemListView"], function (
-  Backbone: BackboneModule,
-  ItemList: typeof Backbone.Collection,
-  ItemListView: typeof Backbone.View,
-): Backbone.Router {
-  var AppRouter: Backbone.Router = Backbone.Router.extend({
+  Backbone,
+  ItemList,
+  ItemListView,
+) {
+  var AppRouter = Backbone.Router.extend({
     routes: {
       "": "home",
     },

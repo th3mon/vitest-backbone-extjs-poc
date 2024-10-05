@@ -1,10 +1,5 @@
-import { BackboneModule } from "../types/backbone-module";
-
-define(["backbone", "underscore"], function (
-  Backbone: BackboneModule,
-  _: any,
-): Backbone.View {
-  var ItemView: Backbone.View = Backbone.View.extend({
+define(["backbone", "underscore"], function (Backbone, _) {
+  var ItemView = Backbone.View.extend({
     tagName: "li",
     template: _.template("<%= name %> - <%= description %>"),
 
