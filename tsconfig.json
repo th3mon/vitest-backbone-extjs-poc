@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "amd",
+    "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src/**/*",
-    "test/**/*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["test/**/*"]
 }

@@ -1,5 +1,13 @@
-import requirejsConfig from './requirejs-config';
+import "./requirejs-config";
+import { BackboneModule } from "./types/backbone-module";
 
-require(['app'], function(App) {
-  App.initialize();
+require(["routers/appRouter", "backbone"], function (
+  AppRouter: typeof Backbone.Router,
+  Backbone: BackboneModule,
+): void {
+  $(function () {
+    new AppRouter();
+
+    Backbone.history.start();
+  });
 });
