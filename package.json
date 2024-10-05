@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "vite",
     "test": "vitest",
-    "build": "tsc"
+    "build": "npm run copy-requirejs && tsc",
+    "copy-requirejs": "mkdir -p ./dist/lib && cp node_modules/requirejs/require.js ./dist/lib/require.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,7 @@
     "@vitejs/plugin-vue": "^5.1.4",
     "jsdom": "^25.0.1",
     "typescript": "^5.6.2",
+    "vite": "^5.4.8",
     "vitest": "^2.1.2"
   }
 }
